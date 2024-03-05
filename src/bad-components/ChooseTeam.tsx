@@ -25,6 +25,7 @@ export function ChooseTeam(): JSX.Element {
 
     function clearTeam() {
         setTeam([]);
+        setAllOptions(PEOPLE);
     }
 
     return (
