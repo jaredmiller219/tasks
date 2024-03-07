@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 
 export function ChangeColor(): JSX.Element {
     const colors = [
         "Red",
         "Blue",
         "Green",
-        "Yellow",
+        "Gray",
         "Purple",
-        "Pink",
+        "HotPink",
         "Orange",
         "Black"
     ];
@@ -16,19 +17,32 @@ export function ChangeColor(): JSX.Element {
     return (
         <div>
             <h3>Change Color</h3>
-            {colors.map((color, index) => (
-                <div key={index}>
-                    <input
-                        type="radio"
-                        id={color}
+            <Form>
+                {colors.map((color, index) => (
+                    <Form.Check
+                        key={index}
+                        inline
+                        label={
+                            <span
+                                style={{
+                                    backgroundColor: color,
+                                    color: "white",
+                                    padding: "0 5px",
+                                    fontWeight: "bold"
+                                }}
+                            >
+                                {color === "HotPink" ? "Hot Pink" : color}
+                            </span>
+                        }
                         name="color"
+                        type="radio"
+                        id={`inline-radio-${index}`}
                         value={color}
                         checked={selectedColor === color}
                         onChange={() => setSelectedColor(color)}
                     />
-                    <label htmlFor={color}>{color}</label>
-                </div>
-            ))}
+                ))}
+            </Form>
             <div
                 style={{
                     backgroundColor: selectedColor,
@@ -38,7 +52,7 @@ export function ChangeColor(): JSX.Element {
                 }}
                 data-testid="colored-box"
             >
-                {selectedColor}
+                {selectedColor === "HotPink" ? "Hot Pink" : selectedColor}
             </div>
         </div>
     );

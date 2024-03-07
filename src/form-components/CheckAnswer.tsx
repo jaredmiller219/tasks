@@ -16,8 +16,8 @@ export function CheckAnswer({
     return (
         <div>
             <h3>Check Answer</h3>
-            <input type="text" onChange={handleChange}></input>
-            <div>{isCorrect ? "✔️" : "❌"}</div>
+            <input type="text" onChange={handleChange}></input>{" "}
+            {isCorrect ? "✔️" : "❌"}
         </div>
     );
 }

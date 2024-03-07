@@ -21,8 +21,8 @@ export function MultipleChoiceQuestion({
                         {option}
                     </option>
                 ))}
-            </select>
-            <div>{selectedChoice === expectedAnswer ? "✔️" : "❌"}</div>
+            </select>{" "}
+            {selectedChoice === expectedAnswer ? "✔️" : "❌"}
         </div>
     );
 }

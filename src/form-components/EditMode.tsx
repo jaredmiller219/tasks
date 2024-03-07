@@ -22,7 +22,7 @@ export function EditMode(): JSX.Element {
     return (
         <div>
             <label className="form-switch">
-                Edit Mode
+                Edit Mode{" "}
                 <input
                     type="checkbox"
                     checked={isEditMode}
